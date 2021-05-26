@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
 // Creamos la función generateJWT para los documents de user
 // Esta función genera un JWT para el user.
 // Un JWT es una forma segura de transmitir información
-userSchema.methods.generateJWT = () => {
+userSchema.methods.generateJWT = function () {
   return jwt.sign(
     {
       _id: this._id,

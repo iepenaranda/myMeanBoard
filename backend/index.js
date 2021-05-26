@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 // importamos las routes previamente creadas
 const User = require("./routes/user");
 const Auth = require("./routes/auth");
+const Board = require("./routes/board");
 
 // variable principal que ejecuta la app
 const app = express();
@@ -14,6 +15,7 @@ const app = express();
 app.use(express.json());
 app.use("/api/user/", User);
 app.use("/api/auth/", Auth);
+app.use("/api/board/", Board);
 
 // variable del puerto para trabajaren hosting o en local
 const port = process.env.PORT || 3001;
