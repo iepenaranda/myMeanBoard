@@ -14,6 +14,7 @@ router.post("/newTask", Auth, async (req, res) => {
 
     // 1. Si el usuario no se encuentra en BD
     if(!user) return res.status(400).send("Usuario no autenticado: Por favor inicie sesión.");
+    
     // 2. si el usuario existe, se registrará la tarea
     const board = new Board({
         userId: user._id,
@@ -27,5 +28,17 @@ router.post("/newTask", Auth, async (req, res) => {
     const result = await board.save();
     return res.status(200).send({result});
 });
+
+router.get("/listTasks", Auth, async (req, res) => {
+    // se verifica que el usuario que esta realizando la solicitud
+    const user = await User.findById(req.user._id);
+
+    // 1. si el usuario no se encuentra en la BD
+    if (!user) return res.status(400).send("Usuario no autenticado: Por favor inicie sesión.");
+
+    // 2. Si el usuario existe, se regresaran las tareas registradas por ese usuario
+    const board = await Board.find({userId: user._id});
+    return res.status(200).send({board});
+})
 
 module.exports = router;
