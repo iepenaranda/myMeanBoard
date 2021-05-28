@@ -4,18 +4,8 @@ const Board = require("../models/board");
 const User = require("../models/user");
 const Auth = require("../middleware/auth");
 
-function checkUser(req) {
-  const user = User.findById(req.user._id);
-  if (!user)
-    return res
-      .status(400)
-      .send("Usuario no autenticado: Por favor inicie sesión.");
-  return user;
-}
-
 // Registro de tareas nuevas
 router.post("/newTask", Auth, async (req, res) => {
-  // Verificamos el usuario que esta realizando la solicitud
   const user = await User.findById(req.user._id);
   if (!user)
     return res
@@ -36,7 +26,6 @@ router.post("/newTask", Auth, async (req, res) => {
 
 // Listar tareas guardadas
 router.get("/listTasks", Auth, async (req, res) => {
-  // Verificamos el usuario que esta realizando la solicitud
   const user = await User.findById(req.user._id);
   if (!user)
     return res
@@ -49,7 +38,6 @@ router.get("/listTasks", Auth, async (req, res) => {
 
 // Editar tareas
 router.put("/editTask", Auth, async (req, res) => {
-  // Verificamos el usuario que esta realizando la solicitud
   const user = await User.findById(req.user._id);
   if (!user)
     return res
@@ -69,7 +57,6 @@ router.put("/editTask", Auth, async (req, res) => {
 
 // Eliminar tarea
 router.delete("/:_id", Auth, async (req, res) => {
-  // Verificamos el usuario que esta realizando la solicitud
   const user = await User.findById(req.user._id);
   if (!user)
     return res
@@ -77,8 +64,8 @@ router.delete("/:_id", Auth, async (req, res) => {
       .send("Usuario no autenticado: Por favor inicie sesión.");
 
   const board = await Board.findByIdAndDelete(req.params._id);
-  if (!board) return res.status(400).send("No se pudo eliminar la tarea.");
-  return res.status(200).send("La tarea due eliminada.");
+  if (!board) return res.status(400).send("La tarea no se pudo eliminar.");
+  return res.status(200).send("La tarea fue eliminada.");
 });
 
 module.exports = router;

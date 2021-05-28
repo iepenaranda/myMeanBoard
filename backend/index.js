@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const User = require("./routes/user");
-const Auth = require("./routes/login");
+const Auth = require("./routes/auth");
 const Board = require("./routes/board");
 
 // Ejecución del servidor

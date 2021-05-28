@@ -9,6 +9,7 @@ router.post("/newUser", async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
   if (user) return res.status(400).send("El usuario ya existe.");
 
+  // Guardamos el usuario en BD
   const hash = await bcrypt.hash(req.body.password, 8);
   user = new User({
     name: req.body.name,
