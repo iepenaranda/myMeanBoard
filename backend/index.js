@@ -1,12 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-// importamos las routes previamente creadas
 const User = require("./routes/user");
 const Auth = require("./routes/login");
 const Board = require("./routes/board");
 
-// variable principal que ejecuta la app
+// Ejecución del servidor
 const app = express();
 app.use(express.json());
 app.use("/api/user/", User);
