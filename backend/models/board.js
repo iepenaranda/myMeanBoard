@@ -1,7 +1,5 @@
-// importamos modulos
 const mongoose = require("mongoose");
 
-// se crea el esquema de Baord que se usará para la BD
 const boardSchema = new mongoose.Schema({
     userId: String,
     name: String,
@@ -13,8 +11,6 @@ const boardSchema = new mongoose.Schema({
         default: Date.now},
 });
 
-// Creamos el modelo usando el esquema previamente creado y lo asignamos a la colección board
+// Instancia de Board que será exportado
 const Board = mongoose.model("board", boardSchema);
-
-// exportamos el modulo: será llamado por el archivo correspondiente en la carpeta routes
 module.exports = Board;
