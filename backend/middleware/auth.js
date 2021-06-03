@@ -14,7 +14,7 @@ const auth = (req, res, next) => {
     return res.status(400).send("Autorización rechaza: el token no existe.");
 
   try {
-    const payload = jwt.verify(jwtToken, "secretKey");
+    const payload = jwt.verify(jwtToken, process.env.SECRET_KEY);
     req.user = payload;
     next();
   } catch (error) {

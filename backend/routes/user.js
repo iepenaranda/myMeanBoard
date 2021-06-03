@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
 const Role = require("../models/role");
-const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const Auth = require("../middleware/auth");
 const Exist = require("../middleware/userExist");
@@ -70,11 +69,11 @@ router.post("/newAdmin", Auth, Exist, Admin, async (req, res) => {
 
 // Listar usuarios
 router.get("/listUsers/:name?", Auth, Exist, Admin, async (req, res) => {
-  const users = await User.find({
-    name: { $regex: "(" + req.params["name"] + ").*", $options: "i" },
-  })
+
+  const users = await User.find({ name: new RegExp(req.params["name"], "i") })
     .populate("roleId")
     .exec();
+
   if (!users)
     return res
       .status(400)
@@ -82,7 +81,7 @@ router.get("/listUsers/:name?", Auth, Exist, Admin, async (req, res) => {
   return res.status(200).send({ users });
 });
 
-router.update("/updateUser", Auth, Exist, Admin, async (req, res) => {
+router.put("/updateUser", Auth, Exist, Admin, async (req, res) => {
   if (
     !req.body.name ||
     !req.body.email ||
@@ -116,7 +115,7 @@ router.delete("/deleteUser/:_id", Auth, Exist, Admin, async (req, res) => {
 });
 
 // Eliminar usuario por status
-router.update("/deleteUser", Auth, Exist, Admin, async (req, res) => {
+router.put("/deleteUser", Auth, Exist, Admin, async (req, res) => {
   if (
     !req.body.name ||
     !req.body.email ||

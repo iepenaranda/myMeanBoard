@@ -1,6 +1,6 @@
 const Role = require("../models/role");
 
-const admin = (req, res, next) => {
+const admin = async (req, res, next) => {
   const role = await Role.findById(req.user.roleId);
   if (!role) return res.status(401).send("Role does not exist.");
 

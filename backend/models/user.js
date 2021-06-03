@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
-  roleId: {type: mongoose.Schema.ObjectId, ref: "role"},
+  roleId: {type: mongoose.Schema.ObjectId, ref: "roles"},
   status: Boolean,
   date: { type: Date, 
     default: Date.now },
