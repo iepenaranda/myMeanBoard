@@ -26,7 +26,7 @@ router.post("/newUser", async (req, res) => {
     email: req.body.email,
     password: hash,
     roleId: role._id,
-    active: true,
+    status: true,
   });
   const result = await user.save();
 
@@ -46,8 +46,11 @@ router.post("/newAdmin", Auth, Exist, Admin, async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
   if (user) return res.status(400).send("The user already exists");
 
-  const role = await Role.findOne({ _id: req.body.roleId});
-  if (!role) return res.status(400).send("Invalid id.");
+  try {
+    const role = await Role.findOne({ _id: req.body.roleId});
+  } catch (error) {
+    return res.status(400).send("Error: Invalid id.");
+  }
 
   const hash = await bcrypt.hash(req.body.password, 8);
   user = new User({
@@ -55,7 +58,7 @@ router.post("/newAdmin", Auth, Exist, Admin, async (req, res) => {
     email: req.body.email,
     password: hash,
     roleId: req.body.roleId,
-    active: true,
+    status: true,
   });
   const result = await user.save();
 
@@ -91,14 +94,19 @@ router.put("/updateUser", Auth, Exist, Admin, async (req, res) => {
   )
     return res.status(400).send("Data incomplete");
 
+  try {
+    const role = await Role.findById(req.body.roleId);
+  } catch (error) {
+    return res.status(400).send("Error: Invalid id.")
+  }
+  
   const hash = await bcrypt.hash(req.body.password, 8);
-
   const user = await User.findByIdAndUpdate(req.body._id, {
     name: req.body.name,
     email: req.body.email,
     password: hash,
     roleId: req.body.roleId,
-    active: true,
+    status: true,
   });
 
   if (!user) return res.status(401).send("The user was not updated.");
@@ -107,9 +115,14 @@ router.put("/updateUser", Auth, Exist, Admin, async (req, res) => {
 
 // Eliminar usuario por id
 router.delete("/deleteUser/:_id", Auth, Exist, Admin, async (req, res) => {
-  if (!req.params._id) return res.status(400).send("There is not id.");
+  if (!req.params._id) return res.status(400).send("Error: Invalid id.");
+  let user = "";
+  try {
+    user = await User.findByIdAndDelete(req.params._id);
+  } catch (error) {
+    return res.status(400).send("Error: Invalid id.");
+  }
 
-  const user = await User.findByIdAndDelete(req.params._id);
   if (!user) return res.status(401).send("Could not delete the user.");
   return res.status(200).send("The user was deleted.");
 });
@@ -125,6 +138,12 @@ router.put("/deleteUser", Auth, Exist, Admin, async (req, res) => {
   )
     return res.status(400).send("Can not delete user: data incomplete");
 
+  try {
+    const role = await Role.findById(req.body.roleId);
+  } catch (error) {
+    return res.status(400).send("Error: Invalid id.")
+  }
+  
   const hash = await bcrypt.hash(req.body.password, 8);
 
   const user = await User.findByIdAndUpdate(req.body._id, {
@@ -132,10 +151,10 @@ router.put("/deleteUser", Auth, Exist, Admin, async (req, res) => {
     email: req.body.email,
     password: hash,
     roleId: req.body.roleId,
-    active: false,
+    status: false,
   });
 
-  if (!user) return res.status(401).send("The user was deleted.");
+  if (!user) return res.status(401).send("Error: User was not deleted.");
   return res.status(200).send({ user });
 });
 

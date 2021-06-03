@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 
 const boardSchema = new mongoose.Schema({
-  userId: String,
+  userId: {type: mongoose.Schema.ObjectId, ref: "users"},
   name: String,
   description: String,
-  priority: Number,
   status: String,
   imageUrl: String,
   date: { type: Date, default: Date.now },
