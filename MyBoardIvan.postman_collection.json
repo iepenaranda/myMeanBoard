@@ -1,0 +1,911 @@
+{
+	"info": {
+		"_postman_id": "652b5cae-2801-4176-8d8c-84ba47c26392",
+		"name": "MyBoardIvan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 - Roles",
+			"item": [
+				{
+					"name": "Role 1 - admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"admin\",\r\n    \"description\" : \"Administrador de la app\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/role/newRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"newRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role 2 - user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user\",\r\n    \"description\" : \"Usuario normal de la app\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/role/newRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"newRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/role/listRoles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"listRoles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2 - Users",
+			"item": [
+				{
+					"name": "User 1 - admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Ivan Penaranda\",\r\n    \"email\" : \"iepenaranda@gmail.com\",\r\n    \"password\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/newUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"newUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User 2 - user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Nathaly Vergel\",\r\n    \"email\" : \"nvergel@gmail.com\",\r\n    \"password\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/newUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"newUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User 3 - user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Camilo Boada\",\r\n    \"email\" : \"cboada@gmail.com\",\r\n    \"password\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/newUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"newUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3MzkwMjB9.CMJZTgS7GKeD_sS0_EugeydmvVg1xeFRgXxjB8wD4Ro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/user/listUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"listUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List some users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3MzkwMjB9.CMJZTgS7GKeD_sS0_EugeydmvVg1xeFRgXxjB8wD4Ro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/user/listUsers/na",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"listUsers",
+								"na"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List one user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3MzkwMjB9.CMJZTgS7GKeD_sS0_EugeydmvVg1xeFRgXxjB8wD4Ro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/user/listUsers/Camilo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"listUsers",
+								"Camilo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3 - Login",
+			"item": [
+				{
+					"name": "Login user 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"iepenaranda@gmail.com\",\r\n    \"password\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"nvergel@gmail.com\",\r\n    \"password\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"cboada@gmail.com\",\r\n    \"password\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4 - Board",
+			"item": [
+				{
+					"name": "Register Task 1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3NDQwODR9.yNgsPgYNGenwCEw9zQDIbkg6yyVB-rE_beR5O9L7GI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Iniciar BD\",\r\n    \"description\" : \"MongoDB\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/board/newTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"newTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register task 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDYwNTEwMGU0NzVjMTRjZmI2NmIiLCJuYW1lIjoiTmF0aGFseSBWZXJnZWwiLCJyb2xlSWQiOiI2MGI5MDQ2YWNlMGNjZDM4M2M1NjhhOGUiLCJpYXQiOjE2MjI3NDM4MDB9._fI74fqC0i5HZczJKoWHjW8M5gsLWFW-KqVZKysWb3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Diseñar página de contactenos\",\r\n    \"description\" : \"Frontend\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/board/newTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"newTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register task 3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3NDUyMzZ9.gGFuJreJvf-KRleVIYL1bqFAh9d7Aa2x_VWgCHSGba4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Corregir index.js\",\r\n    \"description\" : \"Backend\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/board/newTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"newTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Tasks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDYwNTEwMGU0NzVjMTRjZmI2NmIiLCJuYW1lIjoiTmF0aGFseSBWZXJnZWwiLCJyb2xlSWQiOiI2MGI5MDQ2YWNlMGNjZDM4M2M1NjhhOGUiLCJpYXQiOjE2MjI3NzM0NDV9.L93diqzA1bbYvfUkoU-h2w-Gm__hkWpJ65FybtpZysg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/board/listTasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"listTasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3NDUyMzZ9.gGFuJreJvf-KRleVIYL1bqFAh9d7Aa2x_VWgCHSGba4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\" : \"60b90e5f7e315235c04dadef\",\r\n    \"name\" : \"Completa la Base de Datos\",\r\n    \"description\" : \"MongoDB\",\r\n    \"status\" : \"Done\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/board/editTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"editTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3NDUyMzZ9.gGFuJreJvf-KRleVIYL1bqFAh9d7Aa2x_VWgCHSGba4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/board/60b90e5f7e315235c04dadef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"60b90e5f7e315235c04dadef"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "5 - Admin",
+			"item": [
+				{
+					"name": "Login admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"iepenaranda@gmail.com\",\r\n    \"password\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Admin2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3NDUyMzZ9.gGFuJreJvf-KRleVIYL1bqFAh9d7Aa2x_VWgCHSGba4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Admin admin\",\r\n    \"email\" : \"admin@gmail.com\",\r\n    \"password\" : \"1234\",\r\n    \"roleId\" : \"60b9044dce0ccd383c568a8d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/newAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"newAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user 4",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3NDUyMzZ9.gGFuJreJvf-KRleVIYL1bqFAh9d7Aa2x_VWgCHSGba4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"test Test\",\r\n    \"email\" : \"test@gmail.com\",\r\n    \"password\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/newUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"newUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User 4",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3NDUyMzZ9.gGFuJreJvf-KRleVIYL1bqFAh9d7Aa2x_VWgCHSGba4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/deleteUser/60b93ab8750368579c8bf751",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"deleteUser",
+								"60b93ab8750368579c8bf751"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User to Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3NDUyMzZ9.gGFuJreJvf-KRleVIYL1bqFAh9d7Aa2x_VWgCHSGba4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\" : \"60b90644100e475c14cfb66c\",\r\n    \"name\" : \"Camilo Boada\",\r\n    \"email\" : \"cboada@gmail.com\",\r\n    \"password\" : \"1234\",\r\n    \"roleId\" : \"60b9044dce0ccd383c568a8d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/updateUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User 3 with update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDViNjEwMGU0NzVjMTRjZmI2NmEiLCJuYW1lIjoiSXZhbiBQZW5hcmFuZGEiLCJyb2xlSWQiOiI2MGI5MDQ0ZGNlMGNjZDM4M2M1NjhhOGQiLCJpYXQiOjE2MjI3NDUyMzZ9.gGFuJreJvf-KRleVIYL1bqFAh9d7Aa2x_VWgCHSGba4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\" : \"60b93af7750368579c8bf752\",\r\n    \"name\" : \"test Test\",\r\n    \"email\" : \"test@gmail.com\",\r\n    \"roleId\" : \"60b9046ace0ccd383c568a8e\",\r\n    \"password\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/deleteUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "6 - Upload",
+			"item": [
+				{
+					"name": "Upload Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDYwNTEwMGU0NzVjMTRjZmI2NmIiLCJuYW1lIjoiTmF0aGFseSBWZXJnZWwiLCJyb2xlSWQiOiI2MGI5MDQ2YWNlMGNjZDM4M2M1NjhhOGUiLCJpYXQiOjE2MjI3NzM0NDV9.L93diqzA1bbYvfUkoU-h2w-Gm__hkWpJ65FybtpZysg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Subir imagen",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Backend: Prueba de subir una imagen",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/ivan_/OneDrive/Imágenes/dinos.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/board/newTaskImg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"newTaskImg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
