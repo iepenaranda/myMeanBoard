@@ -1,5 +1,5 @@
 # myMeanBoard
-Ejercicio práctico para el desarrollo de una API por medio del marco de trabajo MEAN-stack.
+Ejercicio práctico para el desarrollo de una API por medio del marco de trabajo MEAN-stack conformado por la tecnologías MongoDB, ExpressJS, Angular y NodeJS.
 ___
 
 ## Configuración Github
@@ -13,7 +13,11 @@ Con estos paso ya se tiene iniciado el repositorio local y se puede proceder a t
 3. `git push -u origin <rama a la cuál se vaya a subir>`
 4. Finalmente para revisar el estado de los archivos localmente se puede usar: `git status`.
 ___
-## Configuración de Angular
+
+## Configuración de Node.JS (Backend)
+
+___
+## Configuración de Angular (Frontend)
 Angular es un framework para aplicaciones web desarrollado en TypeScript (una versión más estricta de JavaScript) desarrollado por Google.
 
 ### Creación de Componentes
@@ -26,14 +30,14 @@ La creación de un componentes se puede realizar con:
 **Nota: Para mayor orden agrupar los componentes por carpetas**
 
 Los componentes en Angular siempre constan de la misma estructura:
-* Un archivo HTML: En este se realiza toda la estructura del modulo en HTML
-* Un archivo CSS: Será la hoja de estilos para su correspondiente HTML
-* Un archivo TS: 
-* Un archivo .spec.ts:
+* Un archivo HTML: En este se realiza toda la estructura del modulo en HTML.
+* Un archivo CSS: Será la hoja de estilos para su correspondiente HTML.
+* Un archivo TS: Estos archivos realizaran la inicialización y conexión con el backend de la información.
+* Un archivo .spec.ts: Estos archivos son para realizar pruebas con los archivos.
 
 ___
 ### Creación de Servicios
-Corresponden a las diferentes funcionalidades que tendrá la aplicación. Estos se crean con: 
+Corresponden a las diferentes funcionalidades que tendrá la aplicación en el Frontend y los encargados de conectar el Frontend (componentes) con el Backend. Estos se crean con: 
 * `ng generate service service/<nombre del servicio>`
 * `ng g s service/<nombre del servicio>`
 
@@ -53,3 +57,20 @@ Con los compónentes, servicios y guards generados aahora es necesario actualiza
 2. Después de importarlos toca agregar los nombres de sus variables a las estructuras de `@NgModules` del mismo archivo. Los llamados de los componentes se guardaran en el arreglo `declarations` mientrás que el llamado de los servicios y los guards se hará en el arreglo `providers`.
 3. Finalmente se generan sus rutas en el archivo `app-routing.module.ts`, en la estrcutura `routes: Routes[]`. Acá se agregaran las rutas que tendra la aplicación.
 ___
+
+### Estructura de los componentes en Angular, 2:
+El archivo TS poseen los elementos OnInit y su Constructor.
+* En la clase se estanciaran las variables necesarias
+* El constructor se encargara de iniciar los elementos necesarios una vez se ejecute el servidor. Acá se inicializan las variables previamente instanciadas.
+
+___
+#### 10/06/2021
+     
+* [ ] Es para enviar datos desde el frontend por medio de la variable a la cual este asignado.
+* ( ) Es para recibir datos desde el backend y asignarlos a alguna variable a la cuál este asignados.
+
+Necesitaremos httpclient para poder utilizar servicios dentro de la aplicación y forms para usar los formularios de Angular y los llamamos en la estrcutura `import[]` de app.module.ts
+* `import { HttpClientModule } from "@angular/common/http";`
+* `import { FormsModule, ReactiveFormsModule } from "@angular/forms";`
+* `*ngIf="<nombre de la variable>"` es una forma de crear un if statement dentro de html, lo que implicará que la existencia del elemento al que pertenezca dependerá si el resultado del if es true o false.
+* 
