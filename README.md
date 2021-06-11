@@ -20,8 +20,14 @@ ___
 ## Configuración de Angular (Frontend)
 Angular es un framework para aplicaciones web desarrollado en TypeScript (una versión más estricta de JavaScript) desarrollado por Google.
 
+### Inicialización
+Para empezar a trabajar con Angular es necesario crear la carpeta Frontend con toda su estructura:
+* `ng new frontend`
+
+La ejecución de este comando tomara tiempo segú la conexión a internet y pedira la selección de algunas opciones para la configuración de la carpeta.
+
 ### Creación de Componentes
-La estrucutra del frontend generada por Angular se basa en _componentes_, lo que permite separar la ejecución de las diferentes funcionalidades de una aplicación dentro de la misma página sin tener que estar constantemente actualizando la página completa.
+La estrucutra del frontend generada por Angular se basa en _componentes_, lo que permite separar la ejecución de las diferentes funcionalidades de una aplicación dentro de la misma página sin tener que estar actualizando la página completa.
 
 La creación de un componentes se puede realizar con: 
 * `ng generate component <ubicación del componente>`
@@ -58,19 +64,24 @@ Con los compónentes, servicios y guards generados aahora es necesario actualiza
 3. Finalmente se generan sus rutas en el archivo `app-routing.module.ts`, en la estrcutura `routes: Routes[]`. Acá se agregaran las rutas que tendra la aplicación.
 ___
 
-### Estructura de los componentes en Angular, 2:
+### Estructura de los componentes en Angular, parte 2:
 El archivo TS poseen los elementos OnInit y su Constructor.
 * En la clase se estanciaran las variables necesarias
 * El constructor se encargara de iniciar los elementos necesarios una vez se ejecute el servidor. Acá se inicializan las variables previamente instanciadas.
+___
 
+### Librerias Frontend:
+Para Angular de ha desarrollado una libreria de Frontend llamada Angular Material, su funcionamiento es similar al de Bootstrap para a diferencia de este último, Material debe ser instalado en el proyecto, junto co esta también hay otro complemenentos utiles como flex-layout y cdk para su funcionamiento correcto.
+* `ng add @angular/material`
+* `npm i @angular/flex-layout @angular/cdk`
 ___
 #### 10/06/2021
      
-* [ ] Es para enviar datos desde el frontend por medio de la variable a la cual este asignado.
+* [] Es para enviar datos desde el frontend por medio de la variable a la cual este asignado.
 * ( ) Es para recibir datos desde el backend y asignarlos a alguna variable a la cuál este asignados.
 
-Necesitaremos httpclient para poder utilizar servicios dentro de la aplicación y forms para usar los formularios de Angular y los llamamos en la estrcutura `import[]` de app.module.ts
+Necesitaremos __httpclient__ para poder utilizar servicios dentro de la aplicación y forms para usar los formularios de Angular y los llamamos en la estrcutura `import[]` de app.module.ts
 * `import { HttpClientModule } from "@angular/common/http";`
 * `import { FormsModule, ReactiveFormsModule } from "@angular/forms";`
-* `*ngIf="<nombre de la variable>"` es una forma de crear un if statement dentro de html, lo que implicará que la existencia del elemento al que pertenezca dependerá si el resultado del if es true o false.
+* `*ngIf="<nombre de la variable>"` es una forma de crear un if statement dentro de html, lo que implicará que la visibilidad del elemento al que pertenezca dependerá si el resultado del if es true o false.
 * 
