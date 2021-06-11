@@ -1,19 +1,17 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="bgHeader">
   <ul>
-    <a routerLink="saveTask">Crear tarea</a>
+    <a routerLink="listTask">Listar Tareas</a>
   </ul>
   <ul>
-    <a routerLink="listTasks">Tareas asignadas</a>
+    <a routerLink="saveTask">Crear Tareas</a>
   </ul>
-  <span class="headerSpace"></span>
   <ul>
     <a routerLink="listUser">Admin</a>
   </ul>
-  <span class="headerSpace"></span>
+  <span class="headerSpacer"></span>
   <ul>
-    <a mat-button routerLink="registerUser">Registrarse</a>
-    <a mat-button routerLink="login">Iniciar sesión</a>
-    <a mat-button routerLink="">Cerrar sesión</a>
+    <a mat-button routerLink="register">Sign up</a>
+    <a mat-button routerLink="login">Log in</a>
+    <a mat-button>Logout</a>
   </ul>
-
 </mat-toolbar>

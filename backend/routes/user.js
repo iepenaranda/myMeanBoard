@@ -8,7 +8,7 @@ const Exist = require("../middleware/userExist");
 const Admin = require("../middleware/admin");
 
 // Registro de usuario nuevo
-router.post("/newUser", async (req, res) => {
+router.post("/registerUser", async (req, res) => {
   if (!req.body.name || !req.body.email || !req.body.password)
     return res.status(401).send("Incomplete data.");
 

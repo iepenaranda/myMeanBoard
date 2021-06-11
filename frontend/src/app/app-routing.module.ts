@@ -18,45 +18,45 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'listTasks',
-    component: ListTaskComponent
+    path: 'listTask',
+    component: ListTaskComponent,
   },
   {
     path: 'saveTask',
-    component: SaveTaskComponent
+    component: SaveTaskComponent,
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
   {
     path: 'listUser',
-    component: ListUserComponent
+    component: ListUserComponent,
   },
   {
     path: 'registerUser',
-    component: RegisterUserComponent
+    component: RegisterUserComponent,
   },
   {
     path: 'updateUser',
-    component: UpdateUserComponent
+    component: UpdateUserComponent,
   },
   {
-    path: 'listRoles',
-    component: ListRoleComponent
+    path: 'listRole',
+    component: ListRoleComponent,
   },
   {
     path: 'registerRole',
-    component: RegisterRoleComponent
+    component: RegisterRoleComponent,
   },
   {
     path: 'updateRole',
-    component: UpdateRoleComponent
-  },
+    component: UpdateRoleComponent,
+  }
 ];
 
 @NgModule({

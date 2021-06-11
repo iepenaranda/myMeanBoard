@@ -8,26 +8,27 @@ import { LoginComponent } from './home/login/login.component';
 import { RegisterComponent } from './home/register/register.component';
 import { ListTaskComponent } from './board/list-task/list-task.component';
 import { SaveTaskComponent } from './board/save-task/save-task.component';
-import { ListRoleComponent } from './admin/list-role/list-role.component';
 import { ListUserComponent } from './admin/list-user/list-user.component';
-import { RegisterRoleComponent } from './admin/register-role/register-role.component';
 import { RegisterUserComponent } from './admin/register-user/register-user.component';
-import { UpdateRoleComponent } from './admin/update-role/update-role.component';
 import { UpdateUserComponent } from './admin/update-user/update-user.component';
-
-import { AuthService } from "./services/auth.service";
-import { BoardService } from "./services/board.service";
-import { TokenInterceptorService } from "./services/token-interceptor.service";
-import { AuthGuard } from "./guard/auth.guard";
+import { ListRoleComponent } from './admin/list-role/list-role.component';
+import { RegisterRoleComponent } from './admin/register-role/register-role.component';
+import { UpdateRoleComponent } from './admin/update-role/update-role.component';
+import { AuthService } from './services/auth.service';
+import { BoardService } from './services/board.service';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { AuthGuard } from './guard/auth.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -37,26 +38,29 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     RegisterComponent,
     ListTaskComponent,
     SaveTaskComponent,
-    ListRoleComponent,
     ListUserComponent,
-    RegisterRoleComponent,
     RegisterUserComponent,
+    UpdateUserComponent,
+    ListRoleComponent,
+    RegisterRoleComponent,
     UpdateRoleComponent,
-    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
     MatButtonModule,
-    MatCardModule,
-    MatExpansionModule,
     MatFormFieldModule,
-    MatIconModule,
     MatInputModule,
-    MatToolbarModule
+    MatCardModule,
+    MatIconModule,
+    MatExpansionModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService, BoardService, AuthGuard, TokenInterceptorService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
