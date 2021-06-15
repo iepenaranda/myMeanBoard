@@ -19,7 +19,7 @@ Es un framework diseñado para ejecutar el lenguaje de Javascript en el lado del
 
 Entonces, para inicializar los archivos de Node.JS:
 * Se usa `npm init`. Con esto se establecera los archivos necesarios para trabajar con Node y solicitara alguna información sobre el proyecto para guardarla.
-* Para instalar las librerias se usa: `npm install <nombre de la libreria> --save` o `npm i <nombre de la libreria> --save`. La información de estas librerias se guardara en una carpeta llamada node_modules y se llamaran por medio de los archivos package.json y package-lock.json. El archivo package.json es el necesario para después descargar las librerias en caso de que se borre la carpeta node_modules.
+* Para instalar las librerias se usa: `npm install <nombre de la libreria> --save`. La información de estas librerias se guardara en una carpeta llamada node_modules y se llamaran por medio de los archivos package.json y package-lock.json. El archivo package.json es el necesario para después descargar las librerias en caso de que se borre la carpeta node_modules.
 
 Las librerias usualmente requeridas son:
 * __Express:__ Para establecer un servidor y el manejo de rutas dentro del proyecto.
@@ -32,7 +32,10 @@ Las librerias usualmente requeridas son:
 * __moment:__ Para el manejo de fechas dentro del proyecto.
 * __cors:__ Para la conexión del Backend con el Frontend.
 * __mongoose:__ Para conectar con bases de datos de MongoDB.
-* __nodemon:__ Esta se usa en desarrollo, es para que la plaicación se reinicie automaticamente cada vez que se realizan cambios en el codigo. Para instalar esta librerias toca usar el comando: `nodemon --save-dev`.
+* __nodemon:__ Esta se usa en desarrollo, es para que la aplicación se reinicie automaticamente cada vez que se realizan cambios en el codigo. Para instalar esta librerias toca usar el comando: `nodemon --save-dev`.
+
+Una vez creados los archivos package.json es necesario cambiar dentro de este archivo la instrucción `"test"` del bloque `"scripts"` en el archivo package.json y poner: 
+*  `"start": "nodemon index.js"` esto para que la aplciación se pueda iniciar usando el comando `npm start`.
 
 ### Arquitectura del Backend:
 Gracias a la configuración de `npm init`, el archivo que se ejecutara una vez iniciado la aplicación será index.js. Entonces a partir de este archivo se debe hacer las conexiónes a todos los demás archivos del proyecto:
