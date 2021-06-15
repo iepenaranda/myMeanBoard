@@ -15,6 +15,24 @@ Con estos paso ya se tiene iniciado el repositorio local y se puede proceder a t
 ___
 
 ## Configuración de Node.JS (Backend)
+Es un framework diseñado para ejecutar el lenguaje de Javascript en el lado del servidor. 
+
+Entonces, para inicializar los archivos de Node.JS:
+* Se usa `npm init`. Con esto se establecera los archivos necesarios para trabajar con Node y solicitara alguna información sobre el proyecto para guardarla.
+* Para instalar las librerias se usa: `npm install <nombre de la libreria> --save` o `npm i <nombre de la libreria> --save`. La información de estas librerias se guardara en una carpeta llamada node_modules y se llamaran por medio de los archivos package.json y package-lock.json. El archivo package.json es el necesario para después descargar las librerias en caso de que se borre la carpeta node_modules.
+
+Las librerias usualmente requeridas son:
+* __Express:__ Para establecer un servidor y el manejo de rutas dentro del proyecto.
+* __Bcrypt:__ Para encriptar contraseñas.
+* __Connect-multiparty:__ Para recibir archivos desde el Frontend.
+* __Multer:__ Igual que connect-multiparty para recibir archivos, se puede manejar ambas posibilidades dentro de un proyecto.
+* __jsonwebtoken:__ Para manejar Token dentro del backend y con esto información encriptada.
+* __dotenv:__ Para manejar variables de entorno dentro del proyecto por medio de un archivo llamado `.env`.
+* __jwt-simple:__ Para decifrar Jsonwebtoken.
+* __moment:__ Para el manejo de fechas dentro del proyecto.
+* __cors:__ Para la conexión del Backend con el Frontend.
+* __mongoose:__ Para conectar con bases de datos de MongoDB.
+* __nodemon:__ Esta se usa en desarrollo, es para que la plaicación se reinicie automaticamente cada vez que se realizan cambios en el codigo. Para instalar esta librerias toca usar el comando: `nodemon --save-dev`.
 
 ___
 ## Configuración de Angular (Frontend)
