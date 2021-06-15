@@ -37,9 +37,9 @@ Las librerias usualmente requeridas son:
 ### Arquitectura del Backend:
 Gracias a la configuración de `npm init`, el archivo que se ejecutara una vez iniciado la aplicación será index.js. Entonces a partir de este archivo se debe hacer las conexiónes a todos los demás archivos del proyecto:
 * Establecer el servidor de la app con express.
-* Establecer la conexión con la base de datos.
 * Establecer la conexión con las rutas del backend y de las rutas de la API.
 * Establecer la conexión con el puerto en el cuál se desplegara el Backend.
+* Establecer la conexión con la base de datos.
 ___
 ## Configuración de Angular (Frontend)
 Angular es un framework para aplicaciones web desarrollado en TypeScript (una versión más estricta de JavaScript) desarrollado por Google.
