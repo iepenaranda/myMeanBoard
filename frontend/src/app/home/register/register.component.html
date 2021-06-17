@@ -1,22 +1,6 @@
 <div class="form">
   <mat-card class="card">
     <mat-card-title> Register user </mat-card-title>
-    <div class="col-12 col-lg-12" *ngIf="successMessage">
-      <div class="alert alert-success alert-dismissible" role="alert">
-        <div class="alert-message">
-          {{ successMessage }}
-        </div>
-        <button
-          type="button"
-          class="close"
-          (click)="closeX()"
-          data-dismiss="alert"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">X</span>
-        </button>
-      </div>
-    </div>
 
     <div class="col-12 col-lg-12" *ngIf="errorMessage">
       <div class="alert alert-danger alert-dismissible" role="alert">
@@ -42,6 +26,7 @@
             [(ngModel)]="registerData.name"
             matInput
             placeholder="Name"
+            type="text"
             required
           />
         </mat-form-field>
@@ -51,6 +36,7 @@
             [(ngModel)]="registerData.email"
             matInput
             placeholder="Email"
+            type="email"
             required
           />
         </mat-form-field>
@@ -60,6 +46,7 @@
             [(ngModel)]="registerData.password"
             matInput
             placeholder="Password"
+            type="password"
             required
           />
         </mat-form-field>

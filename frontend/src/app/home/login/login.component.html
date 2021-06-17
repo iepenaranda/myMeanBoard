@@ -1,1 +1,57 @@
-<p>login works!</p>
+<div class="form">
+    <mat-card class="card">
+      <mat-card-title> Login </mat-card-title>
+  
+      <div class="col-12 col-lg-12" *ngIf="errorMessage">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+          <div class="alert-message">
+            <button
+              type="button"
+              class="close"
+              (click)="closeX()"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">X</span>
+            </button>
+            {{ errorMessage }}
+          </div>
+        </div>
+      </div>
+  
+      <mat-card-content>
+        <div class="container">
+  
+          <mat-form-field>
+            <input
+              [(ngModel)]="loginData.email"
+              matInput
+              placeholder="Email"
+              type="email"
+              required
+            />
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input
+              [(ngModel)]="loginData.password"
+              matInput
+              placeholder="Password"
+              type="password"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          (click)="login()"
+          class="button colorButton"
+          mat-raised-button
+        >
+          Let's go
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

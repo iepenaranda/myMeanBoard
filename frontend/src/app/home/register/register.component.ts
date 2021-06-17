@@ -7,14 +7,13 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
+
 export class RegisterComponent implements OnInit {
   public registerData: any;
-  public successMessage: String;
   public errorMessage: String;
 
   constructor(private auth: AuthService, private router: Router) {
     this.registerData = {};
-    this.successMessage = '';
     this.errorMessage = '';
   }
 
@@ -32,10 +31,10 @@ export class RegisterComponent implements OnInit {
       this.registerData = {};
     } else {
       this.auth.registerUser(this.registerData).subscribe(
-        (res) => {
+        (res: any) => {
           console.log(res);
-          this.successMessage = 'Register user successful';
-          this.closeAlert();
+          localStorage.setItem('token', res.jwtToken);
+          this.router.navigate(['/saveTask']);
           this.registerData = {};
         },
         (err) => {
@@ -50,13 +49,11 @@ export class RegisterComponent implements OnInit {
   // Asigna a los mensaje de error y exito un mensaje vacio, al estar vacios el HTML dejará de mostrar los recuadros de menjajes
   closeAlert() {
     setTimeout(() => {
-      this.successMessage = '';
       this.errorMessage = '';
     }, 3000);
   }
 
   closeX() {
-    this.successMessage = '';
     this.errorMessage = '';
   }
 }
