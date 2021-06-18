@@ -77,7 +77,7 @@ Corresponden a las diferentes funcionalidades que tendrá la aplicación en el F
 La estructura de los servicios consta de dos archivos TS.
 ___
 ### Creación de Guards
-Cumple con hacer que los archivos middleware creados en el backend puedan funcionar con el frontend. Estos se crean con: 
+Cumple con hacer que los archivos middleware creados en el backend puedan funcionar con el frontend. También se encargan de revisar elementos de la sesión para poder mostrar o no ciertas rutas. Estos se crean con: 
 * `ng generate guard guard/<nombre del servicio>`
 
 La estructura de los guards consta de dos archivos TS.
