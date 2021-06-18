@@ -107,8 +107,16 @@ ___
 * [] Es para enviar datos desde el frontend por medio de la variable a la cual este asignado.
 * ( ) Es para recibir datos desde el backend y asignarlos a alguna variable a la cuál este asignados.
 
-Necesitaremos __httpclient__ para poder utilizar servicios dentro de la aplicación y forms para usar los formularios de Angular y los llamamos en la estrcutura `import[]` de app.module.ts
+Necesitaremos __httpclient__ para poder utilizar servicios dentro de la aplicación y __forms__ para usar los formularios de Angular y los llamamos en la estrcutura `import[]` de app.module.ts
 * `import { HttpClientModule } from "@angular/common/http";`
 * `import { FormsModule, ReactiveFormsModule } from "@angular/forms";`
-* `*ngIf="<nombre de la variable>"` es una forma de crear un if statement dentro de html, lo que implicará que la visibilidad del elemento al que pertenezca dependerá si el resultado del if es true o false.
-* 
+* `*ngIf="<nombre de la variable>"` es una forma de crear un if statement dentro de html, lo que implicará que la visibilidad del elemento al que pertenezca dependerá si el resultado del if es true o false
+
+___
+### Configuración Guard II:
+Los Guards permiten limitar el acceso que tiene el usuario según así se establezca. En este caso se utiliza para que un usuario que no ha iniciado sesión solo pueda acceder a las rutas de login y register. También se puede utilizar para limitar los accesos de un usuario normal respecto a un administrador. Los guard simplemente diran "si puede entrar" o "no, no puede entrar", por lo tanto la logica detrás de porque esa decisión se realiza en los servicios correspondientes.
+
+Finalmente, en el archivo de `app-routing` se especifican en las rutas cuales rutas necesitaran de ese Guard.
+___
+### Configuración Servicios II:
+Como ya se menciono, en los servicios se realizan las solitudes al backend después de recibir la información por medio de los componentes. Además de los servicions clásicos que se plantean para dichas solicitues se plantea un servicio extra llamado _token-interceptor_. La lógica de este servicio consiste en obtener el token creado para la sesión y estar enviandolo y revisandolo. Esto se hace al agregar el _HTTP_INTERCEPTORS_ a los providers en el archivo de `app.modules`.
