@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { BoardService } from "../../services/board.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-save-task',
@@ -10,7 +11,7 @@ export class SaveTaskComponent implements OnInit {
   public taskData: any;
   public errorMessage: string;
 
-  constructor() {
+  constructor(private boardService: BoardService, private router: Router) {
     this.taskData = {};
     this.errorMessage = '';
   }
@@ -22,12 +23,19 @@ export class SaveTaskComponent implements OnInit {
       console.log('Error: Incomplete data.');
       this.errorMessage = 'Error: Incomplete data.';
       this.closeAlert();
-      this.taskData = {};
     } else {
-      console.log('Data recived.');
-      this.errorMessage = 'Data recived.'
-      this.closeAlert();
-      this.taskData = {};
+      this.boardService.saveTask(this.taskData).subscribe(
+        (res: any) => {
+          console.log(res);
+          this.taskData = {};
+          this.router.navigate(['/listTask']);
+        },
+        (err) => {
+          console.log(err);
+          this.errorMessage = err.error;
+          this.closeAlert();
+        }
+      )
     }
   }
 

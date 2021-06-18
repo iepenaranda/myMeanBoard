@@ -28,7 +28,6 @@ export class RegisterComponent implements OnInit {
       console.log('Failed process: Incomplete data');
       this.errorMessage = 'Failed process: Incomplete data';
       this.closeAlert();
-      this.registerData = {};
     } else {
       this.auth.registerUser(this.registerData).subscribe(
         (res: any) => {
