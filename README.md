@@ -98,9 +98,11 @@ El archivo TS poseen los elementos OnInit y su Constructor.
 ___
 
 ### Librerias Frontend:
-Para Angular de ha desarrollado una libreria de Frontend llamada Angular Material, su funcionamiento es similar al de Bootstrap para a diferencia de este último, Material debe ser instalado en el proyecto, junto co esta también hay otro complemenentos utiles como flex-layout y cdk para su funcionamiento correcto.
+Para Angular de ha desarrollado una libreria de Frontend llamada Angular Material, su funcionamiento es similar al de Bootstrap para a diferencia de este último, Material debe ser instalado en el proyecto, junto con esta también hay otro complemenentos utiles como flex-layout y cdk para su funcionamiento correcto.
 * `ng add @angular/material`
 * `npm i @angular/flex-layout @angular/cdk`
+
+Una vez importadas este librerias se puede obtener usar los diferntes componentes de Material que se necesiten importandolos desde `app.modules`.
 ___
 #### 10/06/2021
      
