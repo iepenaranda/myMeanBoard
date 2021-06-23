@@ -78,7 +78,7 @@ router.put("/editTask", Auth, Registered, async (req, res) => {
     status: req.body.status,
   });
   if (!board) return res.status(400).send("La tarea no se pudo editar.");
-  return res.status(200).send({ board });
+  return res.status(200).send({message:"Task updated.", data: board });
 });
 
 // Eliminar tarea
@@ -89,7 +89,7 @@ router.delete("/deleteTask/:_id", Auth, Registered, async (req, res) => {
     return res.status(400).send("Error: Invalid id");
   }
   if (!board) return res.status(401).send("Error: Could not delete task.");
-  return res.status(200).send("Task deleted.");
+  return res.status(200).send({message: "Task deleted."});
 });
 
 module.exports = router;
