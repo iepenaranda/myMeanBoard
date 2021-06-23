@@ -82,7 +82,7 @@ router.put("/editTask", Auth, Registered, async (req, res) => {
 });
 
 // Eliminar tarea
-router.delete("/:_id", Auth, Registered, async (req, res) => {
+router.delete("/deleteTask/:_id", Auth, Registered, async (req, res) => {
   try {
     board = await Board.findByIdAndDelete(req.params._id);
   } catch (error) {

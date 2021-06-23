@@ -1,1 +1,99 @@
-<p>list-task works!</p>
+<div class="bg-component">
+
+  <div class="noTask col-12 col-lg-12" *ngIf="!taskData.length">
+    <div class="alert alert-primary" role="alert">
+      <div class="alert-message">
+        You don't have tasks!
+      </div>
+    </div>
+  </div>
+
+    <div class="accordion_display">
+      <div class="accordion_size">
+        <div>
+
+          <div class="col-12 col-lg-12" *ngIf="errorMessage">
+            <div class="alert alert-danger alert-dismissible" role="alert">
+              <div class="alert-message">
+                <button
+                  type="button"
+                  class="close"
+                  (click)="closeX()"
+                  data-dismiss="alert"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">X</span>
+                </button>
+                {{ errorMessage }}
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <mat-accordion multi="true" *ngIf="taskData.length">
+          <mat-expansion-panel *ngFor="let task of taskData" hideToggle="false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <span class="text_center">
+                  {{ task.name }}
+                </span>
+                <span class="spacer"></span>
+                <button
+                  class="btnToDo"
+                  *ngIf="task.status == 'to-do'"
+                  mat-raised-button
+                >
+                  {{ task.status }}
+                </button>
+                <button
+                  class="btnInProgress"
+                  *ngIf="task.status == 'in-progress'"
+                  mat-raised-button
+                >
+                  {{ task.status }}
+                </button>
+                <button
+                  class="btnDone"
+                  *ngIf="task.status == 'done'"
+                  mat-raised-button
+                >
+                  {{ task.status }}
+                </button>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-panel-description>
+              {{ task.description }}
+            </mat-panel-description>
+            <mat-action-row>
+              <button
+                class="btSelectTodo"
+                mat-button
+                (click)="updateTask(task, 'to-do')"
+              >
+                To-do
+              </button>
+              <button
+                class="btSelectInProgress"
+                mat-button
+                (click)="updateTask(task, 'in-progress')"
+              >
+                In-progress
+              </button>
+              <button
+                class="btSelectDone"
+                mat-button
+                (click)="updateTask(task, 'done')"
+              >
+                Done
+              </button>
+              <span class="spacer"></span>
+              <mat-icon (click)="deleteTask(task)">
+                delete
+              </mat-icon>
+            </mat-action-row>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </div>
+  
