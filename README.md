@@ -106,8 +106,8 @@ Una vez importadas este librerias se puede obtener usar los diferntes componente
 ___
 #### 10/06/2021
      
-* [] Es para enviar datos desde el frontend por medio de la variable a la cual este asignado.
-* ( ) Es para recibir datos desde el backend y asignarlos a alguna variable a la cuál este asignados.
+* [] Para enviar datos desde el Backend al Frontend
+* ( ) Para enviar desde el Front al Backend.
 
 Necesitaremos __httpclient__ para poder utilizar servicios dentro de la aplicación y __forms__ para usar los formularios de Angular y los llamamos en la estrcutura `import[]` de app.module.ts
 * `import { HttpClientModule } from "@angular/common/http";`
