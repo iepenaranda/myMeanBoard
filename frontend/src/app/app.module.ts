@@ -27,8 +27,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
+import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin/admin.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +50,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListRoleComponent,
     RegisterRoleComponent,
     UpdateRoleComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +66,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSelectModule,
+    MatGridListModule,
+    MatDividerModule,
+    MatTabsModule,
   ],
   providers: [
     AuthService,

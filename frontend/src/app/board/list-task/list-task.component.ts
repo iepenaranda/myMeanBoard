@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BoardService } from '../../services/board.service';
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: 'app-list-task',
@@ -11,7 +12,7 @@ export class ListTaskComponent implements OnInit {
   public errorMessage: string;
   public successMessage: string;
 
-  constructor(private board: BoardService) {
+  constructor(private board: BoardService, public auth: AuthService) {
     this.taskData = {};
     this.errorMessage = '';
     this.successMessage = '';

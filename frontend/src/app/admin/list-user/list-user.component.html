@@ -1,1 +1,81 @@
-<p>list-user works!</p>
+<div class="bg-component">
+    <div class="accordion_display">
+      <div class="accordion_size">
+        <div class="col-12 col-lg-12" *ngIf="successMessage">
+          <div class="alert alert-success alert-dismissible" role="alert">
+            <div class="alert-message">
+              {{ successMessage }}
+            </div>
+  
+            <button
+              type="button"
+              class="close"
+              (click)="closeX()"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">X</span>
+            </button>
+          </div>
+        </div>
+        <div class="col-12 col-lg-12" *ngIf="errorMessage">
+          <div class="alert alert-danger alert-dismissible" role="alert">
+            <div class="alert-message">
+              {{ errorMessage }}
+            </div>
+  
+            <button
+              type="button"
+              class="close"
+              (click)="closeX()"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">X</span>
+            </button>
+          </div>
+        </div>
+  
+        <mat-accordion multi="true" *ngIf="usersData.length">
+          <mat-expansion-panel *ngFor="let user of usersData" hideToggle="false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <span class="text_center">{{ user.name }}</span>
+                <span class="spacer"></span>
+                <button class="enable" *ngIf="user.status" mat-raised-button>
+                  Activado
+                </button>
+                <button class="disable" *ngIf="!user.status" mat-raised-button>
+                  Desactivado
+                </button>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+  
+            <mat-panel-description>
+              <mat-grid-list cols="1" rowHeight="10:1">
+                <mat-grid-tile>
+                  Nombre : <span class="spacer"></span> {{ user.name }}
+                  <mat-divider></mat-divider>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  Email : <span class="spacer"></span> {{ user.email }}
+                  <mat-divider></mat-divider>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  Rol : <span class="spacer"></span> {{ user.roleId.name }}
+                </mat-grid-tile>
+              </mat-grid-list>
+            </mat-panel-description>
+  
+            <mat-action-row>
+              <span class="spacer"></span>
+              <mat-icon color="primary" (click)="deleteUser(user)">
+                delete
+              </mat-icon>
+            </mat-action-row>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </div>
+  

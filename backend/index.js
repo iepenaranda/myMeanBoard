@@ -16,6 +16,7 @@ app.use("/api/user/", User);
 app.use("/api/auth/", Auth);
 app.use("/api/board/", Board);
 app.use("/api/role", Role);
+app.use('/uploads', express.static("uploads"));
 
 // Conexión entre el puerto y el host
 app.listen(process.env.PORT, () => console.log("Server running on port: " + process.env.PORT));

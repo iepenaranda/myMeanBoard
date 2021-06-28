@@ -6,7 +6,7 @@
     <a *ngIf="auth.loggedIn()" routerLink="saveTask">New Task</a>
   </ul>
   <ul>
-    <a *ngIf="auth.loggedIn()" routerLink="listUser">Admin</a>
+    <a *ngIf="auth.loggedIn() && auth.getAdmin()" routerLink="listUser">Admin</a>
   </ul>
   <span class="headerSpacer"></span>
   <ul>

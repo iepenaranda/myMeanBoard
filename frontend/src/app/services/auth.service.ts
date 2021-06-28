@@ -8,9 +8,11 @@ import { Router } from "@angular/router";
 })
 export class AuthService {
   private env: String;
+  private admin: Boolean;
 
   constructor(private http: HttpClient, private router: Router) {
     this.env = environment.APP_URL;
+    this.admin = false;
   }
 
   registerUser(user: any) {
@@ -32,5 +34,22 @@ export class AuthService {
   logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/login']);
+  }
+
+  isAdmin() {
+    return this.http.get<any>(this.env + 'auth/admin');
+  }
+
+  setAdmin(admin: boolean) {
+    if (admin) localStorage.setItem('admin', 'true');
+    this.admin = admin;
+  }
+
+  getAdmin() {
+    return !!localStorage.getItem('admin');
+  }
+
+  getRoles(){
+    return this.http.get<any>(this.env + 'role/listRoles');
   }
 }

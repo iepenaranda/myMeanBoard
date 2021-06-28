@@ -11,6 +11,7 @@ import { SaveTaskComponent } from './board/save-task/save-task.component';
 import { LoginComponent } from './home/login/login.component';
 import { RegisterComponent } from './home/register/register.component';
 import { AuthGuard } from "./guard/auth.guard";
+import { AdminComponent } from "./admin/admin/admin.component";
 
 const routes: Routes = [
   {
@@ -64,6 +65,11 @@ const routes: Routes = [
   {
     path: 'updateRole',
     component: UpdateRoleComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
     canActivate: [AuthGuard],
   }
 ];

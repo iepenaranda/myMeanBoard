@@ -1,0 +1,14 @@
+* {
+  color: black !important;
+}
+
+mat-tab-group {
+  margin-bottom: 48px;
+}
+.mat-tab {
+  color: black !important;
+}
+
+.body {
+  background-color: #242529;
+}

@@ -29,8 +29,12 @@ export class LoginComponent implements OnInit {
         (res: any) => {
           console.log('Login successful');
           localStorage.setItem('token', res.jwtToken);
-          this.router.navigate(['/listTask']);
-          this.loginData = {};
+          this.auth.isAdmin().subscribe(
+            (res)=>{
+              this.auth.setAdmin(res.admin);
+              this.router.navigate(['/listTask']);
+            }
+          )
         },
         (err) => {
           console.log('Error: Incorrect email or password');
