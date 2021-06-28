@@ -31,7 +31,7 @@ router.post("/newTask", Auth, Registered, async (req, res) => {
   return res.status(200).send({ result });
 });
 
-router.post("/saveTaskImg", mult, Upload, Auth, Registered, async (req, res) => {
+router.post("/newTaskImg", mult, Upload, Auth, Registered, async (req, res) => {
   if (!req.body.name || !req.body.description)
     return res.status(401).send("Process failed: Incomplete data");
 
